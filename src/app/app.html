@@ -1,342 +1,961 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<style>
-  :host {
-    --bright-blue: oklch(51.01% 0.274 263.83);
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
-    --vivid-pink: oklch(69.02% 0.277 332.77);
-    --hot-red: oklch(61.42% 0.238 15.34);
-    --orange-red: oklch(63.32% 0.24 31.68);
-
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
-    --gray-400: oklch(70.9% 0.015 304.04);
-
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-      180deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-      90deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --pill-accent: var(--bright-blue);
-
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1 {
-    font-size: 3.125rem;
-    color: var(--gray-900);
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: -0.125rem;
-    margin: 0;
-    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-  }
-
-  p {
-    margin: 0;
-    color: var(--gray-700);
-  }
-
-  main {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: inherit;
-    position: relative;
-  }
-
-  .angular-logo {
-    max-width: 9.2rem;
-  }
-
-  .content {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 3rem;
-  }
-
-  .content h1 {
-    margin-top: 1.75rem;
-  }
-
-  .content p {
-    margin-top: 1.5rem;
-  }
-
-  .divider {
-    width: 1px;
-    background: var(--red-to-pink-to-purple-vertical-gradient);
-    margin-inline: 0.5rem;
-  }
-
-  .pill-group {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-  }
-
-  .pill {
-    display: flex;
-    align-items: center;
-    --pill-accent: var(--bright-blue);
-    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
-    color: var(--pill-accent);
-    padding-inline: 0.75rem;
-    padding-block: 0.375rem;
-    border-radius: 2.75rem;
-    border: 0;
-    transition: background 0.3s ease;
-    font-family: var(--inter-font);
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.4rem;
-    letter-spacing: -0.00875rem;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .pill:hover {
-    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
-  }
-
-  .pill-group .pill:nth-child(6n + 1) {
-    --pill-accent: var(--bright-blue);
-  }
-  .pill-group .pill:nth-child(6n + 2) {
-    --pill-accent: var(--electric-violet);
-  }
-  .pill-group .pill:nth-child(6n + 3) {
-    --pill-accent: var(--french-violet);
-  }
-
-  .pill-group .pill:nth-child(6n + 4),
-  .pill-group .pill:nth-child(6n + 5),
-  .pill-group .pill:nth-child(6n + 6) {
-    --pill-accent: var(--hot-red);
-  }
-
-  .pill-group svg {
-    margin-inline-start: 0.25rem;
-  }
-
-  .social-links {
-    display: flex;
-    align-items: center;
-    gap: 0.73rem;
-    margin-top: 1.5rem;
-  }
-
-  .social-links path {
-    transition: fill 0.3s ease;
-    fill: var(--gray-400);
-  }
-
-  .social-links a:hover svg path {
-    fill: var(--gray-900);
-  }
-
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
-    }
-
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
-  }
-</style>
-
-<main class="main">
-  <div class="content">
-    <div class="left-side">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 982 239"
-        fill="none"
-        class="angular-logo"
+<div class="portfolio-container">
+  <!-- Navbar -->
+  <nav class="navbar" [class.scrolled]="isScrolled">
+    <div class="nav-content">
+      <a class="brand-name" (click)="scrollToSection('home')">
+        <span class="brand-text">Sanjay Tiwari</span>
+        <span class="brand-dot"></span>
+      </a>
+      <button
+        class="mobile-menu-toggle"
+        (click)="toggleMobileMenu()"
+        [class.active]="mobileMenuOpen"
       >
-        <g clip-path="url(#a)">
-          <path
-            fill="url(#b)"
-            d="M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
-          />
-          <path
-            fill="url(#c)"
-            d="M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
-          />
-        </g>
-        <defs>
-          <radialGradient
-            id="c"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientTransform="rotate(118.122 171.182 60.81) scale(205.794)"
-            gradientUnits="userSpaceOnUse"
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" [class.mobile-open]="mobileMenuOpen">
+        <li>
+          <a (click)="scrollToSection('home')" [class.active]="activeSection === 'home'">Home</a>
+        </li>
+        <li>
+          <a (click)="scrollToSection('about')" [class.active]="activeSection === 'about'">About</a>
+        </li>
+        <li>
+          <a (click)="scrollToSection('bio')" [class.active]="activeSection === 'bio'"
+            >Executive Bio</a
           >
-            <stop stop-color="#FF41F8" />
-            <stop offset=".707" stop-color="#FF41F8" stop-opacity=".5" />
-            <stop offset="1" stop-color="#FF41F8" stop-opacity="0" />
-          </radialGradient>
-          <linearGradient
-            id="b"
-            x1="0"
-            x2="982"
-            y1="192"
-            y2="192"
-            gradientUnits="userSpaceOnUse"
+        </li>
+        <li>
+          <a (click)="scrollToSection('experience')" [class.active]="activeSection === 'experience'"
+            >Experience</a
           >
-            <stop stop-color="#F0060B" />
-            <stop offset="0" stop-color="#F0070C" />
-            <stop offset=".526" stop-color="#CC26D5" />
-            <stop offset="1" stop-color="#7702FF" />
-          </linearGradient>
-          <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
-        </defs>
-      </svg>
-      <h1>Hello, {{ title() }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
-    </div>
-    <div class="divider" role="separator" aria-label="Divider"></div>
-    <div class="right-side">
-      <div class="pill-group">
-        @for (item of [
-          { title: 'Explore the Docs', link: 'https://angular.dev' },
-          { title: 'Learn with Tutorials', link: 'https://angular.dev/tutorials' },
-          { title: 'Prompt and best practices for AI', link: 'https://angular.dev/ai/develop-with-ai'},
-          { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
-          { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
-          { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
-        ]; track item.title) {
+        </li>
+        <li>
+          <a (click)="scrollToSection('skills')" [class.active]="activeSection === 'skills'"
+            >Skills</a
+          >
+        </li>
+        <li>
+          <a (click)="scrollToSection('tools')" [class.active]="activeSection === 'tools'">Tools</a>
+        </li>
+        <li>
+          <a (click)="scrollToSection('projects')" [class.active]="activeSection === 'projects'"
+            >Projects</a
+          >
+        </li>
+        <li>
           <a
-            class="pill"
-            [href]="item.link"
-            target="_blank"
-            rel="noopener"
+            (click)="scrollToSection('certificates')"
+            [class.active]="activeSection === 'certificates'"
+            >Certificates</a
           >
-            <span>{{ item.title }}</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="14"
-              viewBox="0 -960 960 960"
-              width="14"
-              fill="currentColor"
-            >
-              <path
-                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
-              />
-            </svg>
-          </a>
-        }
+        </li>
+        <li>
+          <a (click)="scrollToSection('contact')" [class.active]="activeSection === 'contact'"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="hero-bg">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+      <div class="particle" *ngFor="let i of particles"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text" data-aos="fade-right">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          Available for opportunities
+        </div>
+        <h1 class="hero-greeting">
+          Hey, I'm <span class="highlight gradient-text">Sanjay Tiwari</span>
+        </h1>
+        <h2 class="hero-title">
+          <span class="typing-text">Software Engineer L2</span>
+        </h2>
+        <p class="hero-subtitle">Frontend Developer | Angular & React Specialist</p>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">25+</span>
+            <span class="stat-label">Chrome Extensions</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Projects Delivered</span>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <button class="social-btn" (click)="openSocialLink('linkedin')" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+            <span class="social-tooltip">LinkedIn</span>
+          </button>
+          <button class="social-btn" (click)="openSocialLink('github')" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+            <span class="social-tooltip">GitHub</span>
+          </button>
+        </div>
+
+        <button class="cta-btn" (click)="scrollToSection('contact')">
+          <span>Get In Touch</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
       </div>
-      <div class="social-links">
-        <a
-          href="https://github.com/angular/angular"
-          aria-label="Github"
-          target="_blank"
-          rel="noopener"
+
+      <div class="hero-image" data-aos="fade-left">
+        <div class="image-wrapper">
+          <div class="image-background"></div>
+          <img
+            src="sanjay_t.png"
+            alt="Sanjay Tiwari"
+            onerror="this.src='https://via.placeholder.com/400x400/4F46E5/FFFFFF?text=ST'"
+          />
+          <div class="image-glow"></div>
+          <div class="floating-badge badge-1">
+            <i class="fab fa-angular"></i>
+          </div>
+          <div class="floating-badge badge-2">
+            <i class="fab fa-react"></i>
+          </div>
+          <div class="floating-badge badge-3">
+            <i class="fab fa-js"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" (click)="scrollToSection('about')">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Get to know me</span>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-description">Passionate about creating exceptional digital experiences</p>
+      </div>
+      <div class="about-content">
+        <div class="profile-card" data-aos="zoom-in">
+          <div class="profile-image-wrapper">
+            <div class="profile-image">
+              <img
+                src="sanjay_t.png"
+                alt="Sanjay Tiwari"
+                onerror="this.src='https://via.placeholder.com/200x200/4F46E5/FFFFFF?text=ST'"
+              />
+              <div class="profile-ring"></div>
+              <div class="profile-ring ring-2"></div>
+            </div>
+            <div class="floating-icons">
+              <i class="fab fa-angular"></i>
+              <i class="fab fa-react"></i>
+              <i class="fab fa-js"></i>
+              <i class="fab fa-html5"></i>
+            </div>
+          </div>
+        </div>
+        <div class="about-text-content" data-aos="fade-left">
+          <p class="about-text">
+            Frontend Developer with 3+ years of experience in building responsive, scalable, and
+            user-centric web applications using Angular, React.js, JavaScript, and modern UI
+            frameworks. Strong understanding of component-based architecture, routing,
+            authentication, validations, and API-driven applications. Experienced in working on
+            enterprise and product-based projects, collaborating with cross-functional teams, and
+            delivering clean, maintainable code in Agile environments.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <i class="fas fa-code"></i>
+              <span>Clean Code Advocate</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-users"></i>
+              <span>Team Collaboration</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-rocket"></i>
+              <span>Performance Focused</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Executive Bio Section -->
+  <section id="bio" class="section bio-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Professional Profile</span>
+        <h2 class="section-title">Executive Bio</h2>
+        <p class="section-description">A journey of growth, expertise, and passion</p>
+      </div>
+      <div class="bio-content">
+        <div class="bio-card" data-aos="fade-up">
+          <div class="bio-header">
+            <div class="bio-image-wrapper">
+              <div class="bio-image">
+                <img
+                  src="sanjay_t.png"
+                  alt="Sanjay Tiwari"
+                  onerror="this.src='https://via.placeholder.com/150x150/4F46E5/FFFFFF?text=ST'"
+                />
+              </div>
+              <div class="status-indicator">
+                <span class="pulse-ring"></span>
+                <span class="pulse-dot"></span>
+              </div>
+            </div>
+            <div class="bio-info">
+              <h3>Sanjay Tiwari</h3>
+              <p class="bio-title">
+                <i class="fas fa-briefcase"></i>
+                Software Engineer L2 - Frontend Specialist
+              </p>
+              <p class="bio-location">
+                <i class="fas fa-map-marker-alt"></i>
+                New Delhi, India
+              </p>
+            </div>
+          </div>
+
+          <div class="bio-body">
+            <div class="bio-intro">
+              <p>
+                Sanjay Tiwari is a passionate Frontend Developer with over 3 years of professional
+                experience specializing in modern web technologies. Currently serving as Software
+                Engineer L2 at Think Future Technologies (TFT), he has demonstrated expertise in
+                building scalable, user-centric applications that drive business value.
+              </p>
+            </div>
+
+            <div class="bio-section-block" data-aos="fade-up">
+              <div class="bio-section-icon">
+                <i class="fas fa-route"></i>
+              </div>
+              <div class="bio-section-content">
+                <h4>Professional Journey</h4>
+                <p>
+                  Starting his career as a Software Engineer Intern in January 2022, Sanjay quickly
+                  progressed through the ranks at Think Future Technologies, advancing to L1
+                  Engineer and eventually to his current L2 position. His journey reflects a
+                  commitment to continuous learning and delivering high-quality solutions.
+                </p>
+              </div>
+            </div>
+
+            <div class="bio-section-block" data-aos="fade-up">
+              <div class="bio-section-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <div class="bio-section-content">
+                <h4>Technical Expertise</h4>
+                <p>
+                  Sanjay specializes in Angular and React.js frameworks, with deep knowledge of
+                  JavaScript, TypeScript, HTML5, CSS3, and SCSS. He excels in building
+                  component-based architectures, implementing complex routing systems, managing
+                  application state with Redux and RxJS, and integrating RESTful APIs. His
+                  experience extends to developing Chrome Extensions, with over 25 extensions to his
+                  credit.
+                </p>
+              </div>
+            </div>
+
+            <div class="bio-section-block" data-aos="fade-up">
+              <div class="bio-section-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <div class="bio-section-content">
+                <h4>Notable Achievements</h4>
+                <ul class="bio-achievements">
+                  <li>
+                    <i class="fas fa-check-circle"></i>
+                    Developed YHealth, a comprehensive healthcare web application with real-time
+                    health metrics integration
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i>
+                    Contributed to Reach, a US-based document collaboration platform with real-time
+                    updates
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i>
+                    Created 25+ Chrome Extensions with dynamic UI and browser API integrations
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i>
+                    Successfully delivered multiple enterprise-grade projects in Agile environments
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bio-section-block" data-aos="fade-up">
+              <div class="bio-section-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <div class="bio-section-content">
+                <h4>Professional Philosophy</h4>
+                <p>
+                  Sanjay believes in writing clean, maintainable code and follows industry best
+                  practices. He is committed to continuous improvement, staying updated with the
+                  latest frontend technologies, and contributing to team success through effective
+                  collaboration and knowledge sharing.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section experience-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Career Path</span>
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-description">Building expertise through dedicated professional growth</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-marker">
+            <div class="marker-ring"></div>
+            <div class="marker-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-badge current">Current Position</div>
+            <span class="timeline-date">
+              <i class="far fa-calendar-alt"></i>
+              Nov 2023 - Mar 2025
+            </span>
+            <h3>Software Engineer L2</h3>
+            <h4>Think Future Technologies (TFT)</h4>
+            <p class="location">
+              <i class="fas fa-map-marker-alt"></i>
+              Gurgaon (Remote)
+            </p>
+            <ul>
+              <li>
+                Developing scalable and maintainable frontend applications using Angular and
+                React.js
+              </li>
+              <li>Writing clean, reusable components and ensuring performance optimization</li>
+              <li>Actively contributing to code reviews and Agile development activities</li>
+            </ul>
+            <div class="timeline-tech">
+              <span>Angular</span>
+              <span>React.js</span>
+              <span>TypeScript</span>
+              <span>Agile</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-marker">
+            <div class="marker-ring"></div>
+            <div class="marker-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-date">
+              <i class="far fa-calendar-alt"></i>
+              May 2022 - Oct 2023
+            </span>
+            <h3>Software Engineer L1</h3>
+            <h4>Think Future Technologies (TFT)</h4>
+            <p class="location">
+              <i class="fas fa-map-marker-alt"></i>
+              Gurgaon (Remote)
+            </p>
+            <ul>
+              <li>Built responsive user interfaces and integrated REST APIs</li>
+              <li>Implemented routing, authentication, and form validations</li>
+              <li>Improved UI/UX and application stability</li>
+            </ul>
+            <div class="timeline-tech">
+              <span>UI/UX</span>
+              <span>REST APIs</span>
+              <span>Authentication</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="timeline-marker">
+            <div class="marker-ring"></div>
+            <div class="marker-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <span class="timeline-date">
+              <i class="far fa-calendar-alt"></i>
+              Jan 2022 - Apr 2022
+            </span>
+            <h3>Software Engineer Intern</h3>
+            <h4>Think Future Technologies (TFT)</h4>
+            <p class="location">
+              <i class="fas fa-map-marker-alt"></i>
+              Gurgaon (Remote)
+            </p>
+            <ul>
+              <li>Developed UI components using HTML, CSS, JavaScript, and React</li>
+              <li>Fixed UI bugs and assisted in feature development</li>
+              <li>Gained hands-on experience in Agile/Scrum environment</li>
+            </ul>
+            <div class="timeline-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>React</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">What I Do</span>
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-description">
+          Mastering modern technologies to build exceptional solutions
+        </p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card" data-aos="flip-left" data-aos-delay="100">
+          <div class="skill-icon-wrapper">
+            <i class="fab fa-react skill-icon"></i>
+            <div class="skill-glow"></div>
+          </div>
+          <h3>React.js</h3>
+          <p>Building dynamic, component-based user interfaces with React and Redux.</p>
+          <div class="skill-progress">
+            <div class="progress-bar" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-card" data-aos="flip-left" data-aos-delay="200">
+          <div class="skill-icon-wrapper">
+            <i class="fab fa-angular skill-icon"></i>
+            <div class="skill-glow"></div>
+          </div>
+          <h3>Angular</h3>
+          <p>Developing scalable web applications with Angular framework and RxJS.</p>
+          <div class="skill-progress">
+            <div class="progress-bar" style="width: 92%"></div>
+          </div>
+        </div>
+        <div class="skill-card" data-aos="flip-left" data-aos-delay="300">
+          <div class="skill-icon-wrapper">
+            <i class="fab fa-js-square skill-icon"></i>
+            <div class="skill-glow"></div>
+          </div>
+          <h3>JavaScript</h3>
+          <p>Developing interactive features with modern ES6+ JavaScript syntax.</p>
+          <div class="skill-progress">
+            <div class="progress-bar" style="width: 88%"></div>
+          </div>
+        </div>
+        <div class="skill-card" data-aos="flip-left" data-aos-delay="400">
+          <div class="skill-icon-wrapper">
+            <i class="fab fa-html5 skill-icon"></i>
+            <div class="skill-glow"></div>
+          </div>
+          <h3>HTML5</h3>
+          <p>Crafting semantic, accessible HTML5 markup for optimal user experience.</p>
+          <div class="skill-progress">
+            <div class="progress-bar" style="width: 95%"></div>
+          </div>
+        </div>
+        <div class="skill-card" data-aos="flip-left" data-aos-delay="500">
+          <div class="skill-icon-wrapper">
+            <i class="fab fa-css3-alt skill-icon"></i>
+            <div class="skill-glow"></div>
+          </div>
+          <h3>CSS & SCSS</h3>
+          <p>Creating responsive, modern designs with CSS3, SCSS, and Bootstrap.</p>
+          <div class="skill-progress">
+            <div class="progress-bar" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="skill-card" data-aos="flip-left" data-aos-delay="600">
+          <div class="skill-icon-wrapper">
+            <i class="fas fa-layer-group skill-icon"></i>
+            <div class="skill-glow"></div>
+          </div>
+          <h3>Redux & RxJS</h3>
+          <p>State management using Redux for React and RxJS for Angular applications.</p>
+          <div class="skill-progress">
+            <div class="progress-bar" style="width: 85%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Section -->
+  <section id="tools" class="section tools-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">My Toolkit</span>
+        <h2 class="section-title">Development Tools</h2>
+        <p class="section-description">Leveraging the best tools for optimal productivity</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card tool-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="skill-icon-wrapper">
+            <i class="fas fa-code skill-icon"></i>
+            <div class="skill-glow"></div>
+          </div>
+          <h3>VS Code</h3>
+          <p>Primary code editor for Angular, React, and JavaScript development.</p>
+        </div>
+        <div class="skill-card tool-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="skill-icon-wrapper">
+            <i class="fab fa-git-alt skill-icon"></i>
+            <div class="skill-glow"></div>
+          </div>
+          <h3>Git</h3>
+          <p>Version control for managing code changes and team collaboration.</p>
+        </div>
+        <div class="skill-card tool-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="skill-icon-wrapper">
+            <i class="fas fa-paper-plane skill-icon"></i>
+            <div class="skill-glow"></div>
+          </div>
+          <h3>Postman</h3>
+          <p>API testing and debugging tool for backend integration.</p>
+        </div>
+        <div class="skill-card tool-card" data-aos="zoom-in" data-aos-delay="400">
+          <div class="skill-icon-wrapper">
+            <i class="fas fa-tasks skill-icon"></i>
+            <div class="skill-glow"></div>
+          </div>
+          <h3>Jira</h3>
+          <p>Agile project management and issue tracking platform.</p>
+        </div>
+        <div class="skill-card tool-card" data-aos="zoom-in" data-aos-delay="500">
+          <div class="skill-icon-wrapper">
+            <i class="fas fa-comments skill-icon"></i>
+            <div class="skill-glow"></div>
+          </div>
+          <h3>Slack</h3>
+          <p>Team communication and collaboration platform.</p>
+        </div>
+        <div class="skill-card tool-card" data-aos="zoom-in" data-aos-delay="600">
+          <div class="skill-icon-wrapper">
+            <i class="fas fa-puzzle-piece skill-icon"></i>
+            <div class="skill-glow"></div>
+          </div>
+          <h3>Chrome Extensions</h3>
+          <p>Developed 25+ Chrome extensions with dynamic UI and browser APIs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">My Work</span>
+        <h2 class="section-title">Projects & Achievements</h2>
+        <p class="section-description">Transforming ideas into impactful digital solutions</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-image">
+            <div class="project-overlay">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h3>YHealth - Healthcare Web Application</h3>
+              <span class="project-tag featured">Featured</span>
+            </div>
+            <p>
+              Built an end-to-end healthcare web app for doctors and patients with prescription
+              viewing, disease tracking, and appointment scheduling.
+            </p>
+            <ul>
+              <li>
+                <i class="fas fa-check"></i>Implemented health metrics integration (blood sugar,
+                heart rate)
+              </li>
+              <li>
+                <i class="fas fa-check"></i>Integrated Google Calendar for appointment scheduling
+              </li>
+              <li>
+                <i class="fas fa-check"></i>Built responsive UI using React, JavaScript, HTML, and
+                CSS
+              </li>
+            </ul>
+            <div class="tech-stack">
+              <span><i class="fab fa-react"></i>React.js</span>
+              <span><i class="fab fa-js"></i>JavaScript</span>
+              <span><i class="fab fa-html5"></i>HTML5</span>
+              <span><i class="fab fa-css3-alt"></i>CSS3</span>
+              <span><i class="fas fa-calendar"></i>Google Calendar API</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-image">
+            <div class="project-overlay">
+              <i class="fas fa-file-alt"></i>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h3>Reach - Document Collaboration Platform</h3>
+              <span class="project-tag">US-Based</span>
+            </div>
+            <p>
+              US-based project for document collaboration and e-signature with real-time updates.
+            </p>
+            <ul>
+              <li>
+                <i class="fas fa-check"></i>Developed responsive UI using Angular and WebSockets
+              </li>
+              <li><i class="fas fa-check"></i>Built reusable components with Angular Material</li>
+              <li><i class="fas fa-check"></i>Managed live data using Observables for smooth UX</li>
+            </ul>
+            <div class="tech-stack">
+              <span><i class="fab fa-angular"></i>Angular</span>
+              <span><i class="fab fa-js"></i>TypeScript</span>
+              <span><i class="fas fa-layer-group"></i>Angular Material</span>
+              <span><i class="fas fa-plug"></i>WebSockets</span>
+              <span><i class="fas fa-sync"></i>RxJS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-image">
+            <div class="project-overlay">
+              <i class="fas fa-robot"></i>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h3>Toloka - AI/LLM Model Training</h3>
+              <span class="project-tag">AI/ML</span>
+            </div>
+            <p>
+              Worked on AI/LLM model training tasks by solving JavaScript-based UI and data
+              problems.
+            </p>
+            <ul>
+              <li><i class="fas fa-check"></i>Built and optimized React.js components</li>
+              <li><i class="fas fa-check"></i>Followed clean code practices and best practices</li>
+              <li><i class="fas fa-check"></i>Collaborated with team on data-driven solutions</li>
+            </ul>
+            <div class="tech-stack">
+              <span><i class="fab fa-react"></i>React.js</span>
+              <span><i class="fab fa-js"></i>JavaScript</span>
+              <span><i class="fas fa-code"></i>Clean Code</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="project-image">
+            <div class="project-overlay">
+              <i class="fas fa-box"></i>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h3>Asset Management System</h3>
+              <span class="project-tag">Enterprise</span>
+            </div>
+            <p>Developed a comprehensive asset tracking and management system with modern UI.</p>
+            <ul>
+              <li>
+                <i class="fas fa-check"></i>Created responsive React.js UI for efficient asset
+                tracking
+              </li>
+              <li><i class="fas fa-check"></i>Integrated frontend with Node.js APIs</li>
+              <li>
+                <i class="fas fa-check"></i>Improved overall UI/UX using modern design practices
+              </li>
+            </ul>
+            <div class="tech-stack">
+              <span><i class="fab fa-react"></i>React.js</span>
+              <span><i class="fab fa-node-js"></i>Node.js</span>
+              <span><i class="fas fa-server"></i>RESTful APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="project-image">
+            <div class="project-overlay">
+              <i class="fas fa-puzzle-piece"></i>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-header">
+              <h3>Chrome Extension Development</h3>
+              <span class="project-tag">25+ Extensions</span>
+            </div>
+            <p>Developed and optimized 25+ Chrome Extensions with dynamic and interactive UI.</p>
+            <ul>
+              <li>
+                <i class="fas fa-check"></i>Implemented browser APIs, local storage, and HTTP
+                requests
+              </li>
+              <li><i class="fas fa-check"></i>Optimized extensions for better performance</li>
+              <li><i class="fas fa-check"></i>Fixed bugs and improved stability</li>
+            </ul>
+            <div class="tech-stack">
+              <span><i class="fab fa-js"></i>JavaScript</span>
+              <span><i class="fab fa-chrome"></i>Chrome APIs</span>
+              <span><i class="fab fa-html5"></i>HTML5</span>
+              <span><i class="fab fa-css3-alt"></i>CSS3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="certificates" class="section certificates-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Continuous Learning</span>
+        <h2 class="section-title">Certificates & Training</h2>
+        <p class="section-description">Committed to ongoing professional development</p>
+      </div>
+      <div class="certificates-grid">
+        <div
+          class="certificate-card"
+          *ngFor="let cert of certificates; let i = index"
+          (click)="openCertificate(cert)"
+          data-aos="fade-up"
+          [attr.data-aos-delay]="(i + 1) * 100"
         >
-          <svg
-            width="25"
-            height="24"
-            viewBox="0 0 25 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Github"
-          >
-            <path
-              d="M12.3047 0C5.50634 0 0 5.50942 0 12.3047C0 17.7423 3.52529 22.3535 8.41332 23.9787C9.02856 24.0946 9.25414 23.7142 9.25414 23.3871C9.25414 23.0949 9.24389 22.3207 9.23876 21.2953C5.81601 22.0377 5.09414 19.6444 5.09414 19.6444C4.53427 18.2243 3.72524 17.8449 3.72524 17.8449C2.61064 17.082 3.81137 17.0973 3.81137 17.0973C5.04697 17.1835 5.69604 18.3647 5.69604 18.3647C6.79321 20.2463 8.57636 19.7029 9.27978 19.3881C9.39052 18.5924 9.70736 18.0499 10.0591 17.7423C7.32641 17.4347 4.45429 16.3765 4.45429 11.6618C4.45429 10.3185 4.9311 9.22133 5.72065 8.36C5.58222 8.04931 5.16694 6.79833 5.82831 5.10337C5.82831 5.10337 6.85883 4.77319 9.2121 6.36459C10.1965 6.09082 11.2424 5.95546 12.2883 5.94931C13.3342 5.95546 14.3801 6.09082 15.3644 6.36459C17.7023 4.77319 18.7328 5.10337 18.7328 5.10337C19.3942 6.79833 18.9789 8.04931 18.8559 8.36C19.6403 9.22133 20.1171 10.3185 20.1171 11.6618C20.1171 16.3888 17.2409 17.4296 14.5031 17.7321C14.9338 18.1012 15.3337 18.8559 15.3337 20.0084C15.3337 21.6552 15.3183 22.978 15.3183 23.3779C15.3183 23.7009 15.5336 24.0854 16.1642 23.9623C21.0871 22.3484 24.6094 17.7341 24.6094 12.3047C24.6094 5.50942 19.0999 0 12.3047 0Z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://twitter.com/angular"
-          aria-label="Twitter"
-          target="_blank"
-          rel="noopener"
+          <div class="cert-icon-wrapper">
+            <i [class]="cert.icon"></i>
+            <div class="cert-glow"></div>
+          </div>
+          <h3>{{ cert.title }}</h3>
+          <span class="cert-date">
+            <i class="far fa-calendar-alt"></i>
+            {{ cert.date }}
+          </span>
+          <p>{{ cert.description }}</p>
+          <button class="view-btn">
+            <span>View Certificate</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Let's Connect</span>
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-description">I'm always open to discussing new opportunities</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-intro">
+            <h3>Let's work together</h3>
+            <p>
+              Feel free to reach out for collaborations, opportunities, or just a friendly chat.
+            </p>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="info-details">
+              <h4>Name</h4>
+              <p>Sanjay Tiwari (Software Engineer L2)</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="info-details">
+              <h4>Phone</h4>
+              <p>+91 9565802283</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="info-details">
+              <h4>Email</h4>
+              <p>sanjaytiwari0099&#64;gmail.com</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info-details">
+              <h4>Location</h4>
+              <p>New Delhi, India</p>
+            </div>
+          </div>
+
+          <div class="social-links-contact">
+            <button class="social-btn" (click)="openSocialLink('linkedin')" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </button>
+            <button class="social-btn" (click)="openSocialLink('github')" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </button>
+          </div>
+        </div>
+
+        <form
+          [formGroup]="contactForm"
+          (ngSubmit)="sendEmail()"
+          class="contact-form"
+          data-aos="fade-left"
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Twitter"
-          >
-            <path
-              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://www.youtube.com/channel/UCbn1OgGei-DV7aSRo_HaAiw"
-          aria-label="Youtube"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="29"
-            height="20"
-            viewBox="0 0 29 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Youtube"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M27.4896 1.52422C27.9301 1.96749 28.2463 2.51866 28.4068 3.12258C29.0004 5.35161 29.0004 10 29.0004 10C29.0004 10 29.0004 14.6484 28.4068 16.8774C28.2463 17.4813 27.9301 18.0325 27.4896 18.4758C27.0492 18.9191 26.5 19.2389 25.8972 19.4032C23.6778 20 14.8068 20 14.8068 20C14.8068 20 5.93586 20 3.71651 19.4032C3.11363 19.2389 2.56449 18.9191 2.12405 18.4758C1.68361 18.0325 1.36732 17.4813 1.20683 16.8774C0.613281 14.6484 0.613281 10 0.613281 10C0.613281 10 0.613281 5.35161 1.20683 3.12258C1.36732 2.51866 1.68361 1.96749 2.12405 1.52422C2.56449 1.08095 3.11363 0.76113 3.71651 0.596774C5.93586 0 14.8068 0 14.8068 0C14.8068 0 23.6778 0 25.8972 0.596774C26.5 0.76113 27.0492 1.08095 27.4896 1.52422ZM19.3229 10L11.9036 5.77905V14.221L19.3229 10Z"
-            />
-          </svg>
-        </a>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <div class="input-wrapper">
+              <i class="fas fa-user"></i>
+              <input id="name" type="text" formControlName="name" placeholder="Enter your name" />
+            </div>
+            <span
+              class="error"
+              *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid"
+            >
+              <i class="fas fa-exclamation-circle"></i>
+              Name is required
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <div class="input-wrapper">
+              <i class="fas fa-envelope"></i>
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                placeholder="Enter your email"
+              />
+            </div>
+            <span
+              class="error"
+              *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid"
+            >
+              <i class="fas fa-exclamation-circle"></i>
+              Valid email is required
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <div class="input-wrapper textarea-wrapper">
+              <i class="fas fa-comment-alt"></i>
+              <textarea
+                id="message"
+                formControlName="message"
+                rows="5"
+                placeholder="Enter your message"
+              ></textarea>
+            </div>
+            <span
+              class="error"
+              *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid"
+            >
+              <i class="fas fa-exclamation-circle"></i>
+              Message is required
+            </span>
+          </div>
+
+          <button type="submit" class="submit-btn" [disabled]="contactForm.invalid">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-text">
+        <p>© 2026 Sanjay Tiwari Portfolio. All Rights Reserved.</p>
+        <p class="footer-tagline">
+          Crafted with <i class="fas fa-heart"></i> and <i class="fas fa-code"></i>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button
+    class="scroll-top"
+    [class.show]="showScrollTop"
+    (click)="scrollToTop()"
+    aria-label="Scroll to top"
+  >
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Certificate Modal -->
+  <div class="modal-overlay" *ngIf="selectedCertificate" (click)="closeCertificate()">
+    <div class="modal-content" (click)="$event.stopPropagation()" data-aos="zoom-in">
+      <button class="modal-close" (click)="closeCertificate()" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-image">
+        <img [src]="selectedCertificate.image" [alt]="selectedCertificate.title" />
+      </div>
+      <div class="modal-info">
+        <h3>{{ selectedCertificate.title }}</h3>
+        <p class="modal-date">
+          <i class="far fa-calendar-alt"></i>
+          {{ selectedCertificate.date }}
+        </p>
+        <p>{{ selectedCertificate.description }}</p>
       </div>
     </div>
   </div>
-</main>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-<router-outlet />
+</div>
