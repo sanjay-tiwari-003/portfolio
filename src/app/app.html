@@ -754,10 +754,16 @@
         <p class="section-description">Committed to ongoing professional development</p>
       </div>
       <div class="certificates-grid">
-        <div
+        <!-- <div
           class="certificate-card"
           *ngFor="let cert of certificates; let i = index"
           (click)="openCertificate(cert)"
+          data-aos="fade-up"
+          [attr.data-aos-delay]="(i + 1) * 100"
+        > -->
+        <div
+          class="certificate-card"
+          *ngFor="let cert of certificates; let i = index"
           data-aos="fade-up"
           [attr.data-aos-delay]="(i + 1) * 100"
         >
@@ -771,10 +777,10 @@
             {{ cert.date }}
           </span>
           <p>{{ cert.description }}</p>
-          <button class="view-btn">
+          <!-- <button class="view-btn">
             <span>View Certificate</span>
             <i class="fas fa-arrow-right"></i>
-          </button>
+          </button> -->
         </div>
       </div>
     </div>
@@ -803,7 +809,7 @@
             </div>
             <div class="info-details">
               <h4>Name</h4>
-              <p>Sanjay Tiwari (Software Engineer L2)</p>
+              <p>Sanjay Tiwari <br/>(Software Engineer L2)</p>
             </div>
           </div>
 
